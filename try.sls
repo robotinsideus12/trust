@@ -6,16 +6,16 @@ $outputFolderPath = "C:\Users\Public"
 $fullOutputPath = Join-Path -Path $outputFolderPath -ChildPath $outputFileName
 
 try {
-    Write-Host "Шаг 1: Декодирование строки Base64 в байты..."
+    Write-Host "decode"
     
     $fileBytes = [System.Convert]::FromBase64String($base64String)
 
-    Write-Host "Шаг 2: Сохранение байтов в файл по пути '$fullOutputPath'..."
+    Write-Host "whrite"
     
     Set-Content -Path $fullOutputPath -Value $fileBytes -Encoding Byte
 
-    Write-Host "Успех! Файл '$outputFileName' был создан в папке $outputFolderPath"
+    Write-Host "welldone"
 }
 catch {
-    Write-Error "Произошла ошибка при декодировании или сохранении файла: $($_.Exception.Message)"
+    Write-Error "error"
 }
